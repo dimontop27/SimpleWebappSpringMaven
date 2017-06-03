@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="test@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="test">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="guest_book"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="sys"/>
+    <schema id="8" parent="1" name="testwork"/>
+    <schema id="9" parent="1" name="webshop"/>
+    <table id="10" parent="2" name="product"/>
+    <table id="11" parent="2" name="product_category"/>
+    <table id="12" parent="2" name="role"/>
+    <table id="13" parent="2" name="user"/>
+    <table id="14" parent="2" name="user_role"/>
+    <column id="15" parent="10" name="Id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="16" parent="10" name="description">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="17" parent="10" name="price">
+      <Position>3</Position>
+      <DataType>decimal(19,2)|0</DataType>
+    </column>
+    <column id="18" parent="10" name="title">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="19" parent="10" name="product_category_id">
+      <Position>5</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <index id="20" parent="10" name="FK_noc660u2fi6jvk0e6gf0c96km">
+      <ColNames>product_category_id</ColNames>
+    </index>
+    <key id="21" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="22" parent="10" name="FK_noc660u2fi6jvk0e6gf0c96km">
+      <ColNames>product_category_id</ColNames>
+      <RefSchemaName>test</RefSchemaName>
+      <RefTableName>product_category</RefTableName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="23" parent="11" name="Id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="24" parent="11" name="title">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="25" parent="11" name="parent_product_category">
+      <Position>3</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <index id="26" parent="11" name="FK_5cnsir1fmvres310i2rgdd7jb">
+      <ColNames>parent_product_category</ColNames>
+    </index>
+    <key id="27" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="28" parent="11" name="FK_5cnsir1fmvres310i2rgdd7jb">
+      <ColNames>parent_product_category</ColNames>
+      <RefSchemaName>test</RefSchemaName>
+      <RefTableName>product_category</RefTableName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="29" parent="12" name="Id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="30" parent="12" name="Title">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="31" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="32" parent="13" name="Id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="33" parent="13" name="age">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="34" parent="13" name="firstName">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="35" parent="13" name="lastName">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="36" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="37" parent="14" name="user_id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="14" name="role_id">
+      <Position>2</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="39" parent="14" name="FK_it77eq964jhfqtu54081ebtio">
+      <ColNames>role_id</ColNames>
+    </index>
+    <key id="40" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_id
+role_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="41" parent="14" name="FK_apcc8lxk2xnug8377fatvbn04">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>test</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <foreign-key id="42" parent="14" name="FK_it77eq964jhfqtu54081ebtio">
+      <ColNames>role_id</ColNames>
+      <RefSchemaName>test</RefSchemaName>
+      <RefTableName>role</RefTableName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
